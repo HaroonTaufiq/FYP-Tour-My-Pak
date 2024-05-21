@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=TradeGothic+LT+Extended:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@media (max-width: 1015px) {
+    .custom-screen{
+      display: flex;
+      flex-direction: column;
+  
+    }
+   
+  }
+ .example{
+    @apply text-[color:var(--blackish-green,#121)] text-sm not-italic font-medium leading-[normal];
+    /* Montserrat/Medium/14px */
+    font-family: Montserrat;
+}
+
+.nav-ul {
+  padding: 5px;
+  margin: 0px;
+  background-color: skyblue;
+}
+
+.nav-ul li {
+  display: inline-block;
+  padding: 10px;
+}
+
+.nav-ul li a {
+  color: white;
+  padding: 5px;
+}
+
+.blockmargin {
+  margin-block-start: 100px;
+}
+
+.h1 {
+  font-size: 1.9rem
+    /* 20px */
+  ;
+  line-height: 2.00rem
+    /* 28px */
+  ;
+  font-weight: 700;
+  padding-top: 6px
+}
+
+.button {
+  border: 1px solid;
+  padding: 10px;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  width: 200px;
+  background-color: rgb(242 242 242);
+}
+
+.listHead {
+  padding: 3px;
+  border: 1px solid;
+  width: 375px;
+  margin: 0px 400px 0px 400px;
+}
+
+.listItems {
+  display: inline-block;
+  margin: 0px 20px 0px 20px;
+  border-right: 1px solid;
+  padding: 5px;
+}
+
+.listLastItem {
+  display: inline-block;
+  margin: 0px 20px 0px 20px;
+}
+
+.product-list {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.product-list ul li {
+  display: inline-block;
+  border: 1px solid skyblue;
+  width: 150px;
+  padding: 11px;
+
+}
+
+.product-list ul {
+  margin: 0
+}
+
+.search {
+
+  border: 1px solid skyblue;
+}
+
+.search-product-box {
+  border: 1px solid skyblue;
+  width: 400px;
+  height: 50px;
+  margin: 20px;
+  padding-left: 10px;
+
+}
+.background-svg{
+  background-color: #ee5522;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23d23d09' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+}
+.marginLeft-9{
+  margin-left: 9px;
+}
+
+
+
+input[type="text"],input[type="password"],
+input[type="email"],input[type="number"],
+input[type="tel"],input[type="date"],
+textarea{
+    @apply w-full border border-gray-500 my-1 py-2 px-3 rounded-2xl;
+}
+textarea{
+    height: 140px;
+}
+
+button.primary{
+    
+    @apply bg-secondarycolor p-2 w-full text-white rounded-2xl;
+}
+*{
+  font-family:Barlow ;
+}
+.truncated-text {
+  max-height: 1.5em; 
+  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-trigger img{
+  position:absolute;
+  top: 20px;
+  right: 20px;
+  height:60px;
+  width:60px;
+  border-radius:50%;
+overflow:hidden;
+cursor: pointer;
+  
+}
+.menu-trigger h1 {
+  margin-top:2px ;
+}
+.menu-trigger svg{
+  margin-left: 65px;
+  margin-top:-21px ;
+  transform: rotate(270deg);
+}
+
+ .menu-trigger:hover svg{
+
+  transform: rotate(0deg);
+}
+ .dropdown-menu:hover svg{
+
+  transform: rotate(0deg);
+}
+.dropdown-menu{
+  position: absolute;
+  top: 50px;
+  /* right: 20px; */
+  background-color: #fff;
+  border-radius:18px;
+  padding: 10px 10px;
+  width:150px;
+  line-height: 15px;
+  border:1px solid #ddd;
+}
+.dropdown-menu::before{
+  content:"";
+  position: absolute;
+  top:-5px;
+  /* right: 20px; */
+  height:20px;
+  width: 20px;
+  background:#fff;
+  /* transform: rotate(45deg); */
+
+
+
+}
+/* .dropdown-menu.active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 500ms ease;
+}
+.dropdown-menu.inactive{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: 500ms ease;
+} */
+/* .dropdown-menu h3{
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  padding: 20px 0;
+  font-weight: 500;
+  font-size: 10px;
+  color: #555;
+  line-height: 1.2rem;
+} */
+/* .dropdown-menu h3 span{
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 400;
+} */
+.dropdown-menu ul li{
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.dropdown-menu ul li:hover h1{
+  color: #07b44c;
+  cursor:pointer;
+}
+.dropdown-menu ul li:hover img{
+opacity: 1;
+cursor: pointer;
+}
+.dropdownItem{
+  display: flex;
+  margin: 10px auto;
+
+}
+.dropdownItem img{
+  max-width: 20px;
+  margin-right: 10px;
+  /* opacity: 0.5; */
+  transition: 500ms;
+}
+/* .dropdownItem a{
+  max-width: 100px;
+  margin-left: 10px;
+  transition: 500ms;
+  font-weight: 10;
+
+} */
+.f-10{
+  font-weight: 10;
+  color: #333;
+  font-size: 14px;
+  margin-left: 5px;
+}
+@media (min-width: 768px) {
+  /* Your styles here */
+  .example-class {
+    margin-top: -85px !important;
+    width:1000px !important;
+    /* Add other styles as needed */
+  }
+}
