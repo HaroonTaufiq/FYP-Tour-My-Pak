@@ -89,6 +89,7 @@ const photo='/public/skardu.jpg'
 
 
 
+
 //booking widget
 let userString = localStorage.getItem("user");
 

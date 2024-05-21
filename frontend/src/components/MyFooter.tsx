@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import mailbox from "/public/mailbox.svg";
 
 import fb from "/public/fb.svg";
@@ -7,15 +7,19 @@ import twitter from "/public/twitter.svg";
 import youtube from "/public/youtube.svg";
 import { Link } from "react-router-dom";
 const MyFooter = () => {
-  let admin=localStorage.getItem("user") && JSON.parse(localStorage.getItem('user'))?.email=='admin@test.com'?JSON.parse(localStorage.getItem('user')).email=='admin@test.com':null;
-  console.log("userFooter",admin)
+  // let admin=localStorage.getItem("user") && JSON.parse(localStorage.getItem('user'))?.email=='admin@test.com'?JSON.parse(localStorage.getItem('user')).email=='admin@test.com':null;
+  // console.log("userFooter",admin)
+ 
+  // const admin = JSON.parse(localStorage.getItem('user'));
+  // const admin_email=admin.email=="admin@test.com"
+  // console.log("admin email",admin_email)
   return (
    <>
-   {JSON.parse(localStorage.getItem('user'))?.email!=='admin@test.com' &&
-   
+   {/* {JSON.parse(localStorage.getItem('user'))?.email!=='admin@test.com' && */}
+   {/* {!admin_email && */}
     <div className="bg-primarycolor w-fit md:w-full   ">
     <div className="mt-[240px] md:mx-[70px] ">
-      <div className=" relative rounded-[20px] bg-secondarycolor  min-w-[350px] -top-[160px] mx-2 md:mx-0   ">
+      <div className=" relative rounded-[20px] bg-secondarycolor  min-w-[350px] -top-[140px] mx-2 md:mx-0   ">
         <div className="ml-4 md:ml-[24px] flex flex-row md:justify-between ">
           <div >
             <p className="relative w-[100px] md:w-[364px]  text-[44px] leading-[54px] font-bold top-5 text-white  ">
@@ -31,18 +35,7 @@ const MyFooter = () => {
               Get inspired! Receive travel discounts, tips and behind the scenes
               stories.
             </p>
-            {/* <div className="flex mt-[24px]">
-              <div className="max-w-[450px] mb-4">
-                <input
-                  placeholder="  Your Email Address"
-                  className="h-[50px]  md:min-w-[250px] min-w-fit  mr-3 rounded-md "
-                />
-              </div>
-              <button className="mb-4  text-sm font-semibold bg-green-600 z-10 py-[12px] px-[16px] md:py-[16px] md:px-[20px] rounded-[4px]">
-                Subscribe
-              </button>
-             
-            </div> */}
+          
           </div>
           <div className="hidden md:block">
             <img className="md:h-60" src={mailbox} alt="mailbox" />
@@ -146,7 +139,8 @@ const MyFooter = () => {
       
       </div>
       </div>
-}
+
+          {/* } */}
       </>
   );
 };
