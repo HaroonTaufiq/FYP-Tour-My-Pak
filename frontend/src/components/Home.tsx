@@ -135,10 +135,10 @@ if(result.length > 0){
       description2={"honda civic"}
       description3={"ford mustang"}
       description4={"bmw 5 series"}
-      i1={'../../public/carposter.png'}
-      i2={'../../public/carposter.png'}
-      i3={'../../public/carposter.png'}
-      i4={'../../public/carposter.png'}
+      i1={'../../public/carposter3.png'}
+      i2={'../../public/carposter3.png'}
+      i3={'../../public/carposter3.png'}
+      i4={'../../public/carposter3.png'}
       type={"car"}
       />
     </div>
