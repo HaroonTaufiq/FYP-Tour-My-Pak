@@ -127,25 +127,25 @@ const check4=()=>{
 <div className="flex flex-col md:flex-row md:gap-x-10 gap-y-6 mt-[25px]">
 <div>
 <img src={i1} alt='travel img' className="w-[270px] h-[350px] object-cover rounded-xl "/>
-<p className="truncated-text text-white text-[24px] -mt-10 ml-2 font-extrabold  rounded-lg ">{description1 ? description1 : "Neelam Valley"}</p>
+<p className="truncated-text  text-[24px] -mt-10 ml-2 font-extrabold  rounded-lg ">  {description1 ? description1.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : ""}</p>
 <button className="flex h-12 justify-center items-center gap-1 self-stretch rounded-3xl px-4 py-2 bg-secondarycolor text-white mt-4 " onClick={()=>check1()}>{details}</button>
 
 </div>
 <div>
 <img src={i2} alt='travel img' className="w-[270px] h-[350px] object-cover rounded-xl"/>
-<p className=" truncated-text text-white text-[24px] -mt-10 ml-2 font-extrabold  ">{description2 ? description2 : "Ansoo Lake"}</p>
+<p className=" truncated-text  text-[24px] -mt-10 ml-2 font-extrabold  ">{description2 ? description2.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : ""}</p>
 <button className="flex h-12 justify-center items-center gap-1 self-stretch rounded-3xl px-4 py-2 bg-secondarycolor text-white mt-4" onClick={()=>check1()}>{details}</button>
 
 </div>
 <div>
 <img src={i3} alt='travel img' className="w-[270px] h-[350px] object-cover rounded-xl"/>
-<p className="truncated-text text-white text-[24px] -mt-10 ml-2 font-extrabold  ">{description3 ? description3 : "Attabad Lake"}</p>
+<p className="truncated-text  text-[24px] -mt-10 ml-2 font-extrabold  ">{description3 ? description3.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : ""}</p>
 <button className="flex h-12 justify-center items-center gap-1 self-stretch rounded-3xl px-4 py-2 bg-secondarycolor text-white mt-4" onClick={()=>check1()}>{details}</button>
 
 </div>
 <div>
 <img src={i4} alt='travel img' className="w-[270px] h-[350px] object-cover rounded-xl"/>
-<p className="truncated-text text-white text-[24px] -mt-10 ml-2 font-extrabold ">{description4 ? description4 : "Badshahi Mosque"}</p>
+<p className="truncated-text  text-[24px] -mt-10 ml-2 font-extrabold ">{description4 ? description4.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : ""}</p>
 <button className="flex h-12 justify-center items-center gap-1 self-stretch rounded-3xl px-4 py-2 bg-secondarycolor text-white mt-4 font-medium" onClick={()=>check1()}>{details}</button>
 
 </div>

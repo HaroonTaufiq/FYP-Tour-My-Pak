@@ -90,6 +90,12 @@ export default function UpdatePackage() {
     console.log(e.target.files[0])
     fileItem = e.target.files[0];
     fileName = fileItem.name;
+    if (fileItem && fileItem.type.startsWith('image/')) {
+      console.log("right format")
+          }else{
+            alert('Please select a valid image file.');
+            e.target.value = '';
+          }
 
   }
   function uploadImage() {

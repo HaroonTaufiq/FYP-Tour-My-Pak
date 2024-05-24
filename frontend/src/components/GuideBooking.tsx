@@ -71,7 +71,28 @@ useEffect(()=>{
 },[])
 
 // const [price, setPrice] = useState(cost)
-const priceo=cost
+const [exchangeRate, setExchangeRate] = useState(null);
+
+useEffect(() => {
+  // Fetch the exchange rate from an API
+  fetch('https://api.exchangerate-api.com/v4/latest/PKR')
+    .then(response => response.json())
+    .then(data => {
+      setExchangeRate(data.rates.USD);
+    })
+    .catch(error => {
+      console.error('Error fetching exchange rate:', error);
+    });
+}, []);
+let  api_conversion;
+
+if (exchangeRate) {
+  console.log("conversion: ",(cost*exchangeRate).toFixed(2))
+  api_conversion=(cost*exchangeRate).toFixed(2)
+}
+console.log("api convers",api_conversion)
+
+const priceo=api_conversion;
 const [quantity, setQuantity] = useState(1)
 console.log("costo",cost)
 // setPrice(cost)

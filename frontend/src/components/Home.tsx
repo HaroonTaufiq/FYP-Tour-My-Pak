@@ -102,10 +102,10 @@ if(result.length > 0){
       description2={recommendation[1]}
       description3={recommendation[2]}
       description4={recommendation[3]}
-      i1={'/public/travelposter.png'}
-      i2={'/public/travelposter.png'}
-      i3={'/public/travelposter.png'}
-      i4={'/public/travelposter.png'}
+      i1={'/public/travelposter2.png'}
+      i2={'/public/travelposter2.png'}
+      i3={'/public/travelposter2.png'}
+      i4={'/public/travelposter2.png'}
       type={"package"}
       />
     
@@ -118,10 +118,10 @@ if(result.length > 0){
       description2={"hunza serena inn"}
       description3={"shangrila resort skardu"}
       description4={"pearl continental bhurban"}
-      i1={'/public/hotelposter.png'}
-      i2={'/public/hotelposter.png'}
-      i3={'/public/hotelposter.png'}
-      i4={'/public/hotelposter.png'}
+      i1={'/public/hotelposter2.png'}
+      i2={'/public/hotelposter2.png'}
+      i3={'/public/hotelposter2.png'}
+      i4={'/public/hotelposter2.png'}
       type={"chekout"}
       />
       <Services/>

@@ -90,6 +90,12 @@ export default function UpdatePackage() {
     console.log(e.target.files[0])
     fileItem = e.target.files[0];
     fileName = fileItem.name;
+    if (fileItem && fileItem.type.startsWith('image/')) {
+      console.log("right format")
+          }else{
+            alert('Please select a valid image file.');
+            e.target.value = '';
+          }
 
   }
   function uploadImage() {
@@ -249,7 +255,7 @@ console.log(perk)
              {error && !maxPersons && <span className='text-red-500 block -ml-[0px]'>Enter valid maxPersons </span>}
         </div>
         <div>
-          <h3 className="mt-2 -mb-1">Price per night</h3>
+          <h3 className="mt-2 -mb-1">Price </h3>
           <input type="number" value={cost}
             onChange={(ev: any) => setCost(ev.target.value)} />
              {error && !cost && <span className='text-red-500 block -ml-[0px]'>Enter valid price</span>}

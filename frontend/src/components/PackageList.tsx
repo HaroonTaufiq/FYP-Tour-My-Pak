@@ -129,7 +129,7 @@ function SearchPage() {
                 title={item.price}
                 description={item.perk}
                 star={4.73}
-                price={"PKR " + item.cost + " per person"}
+                price={"PKR " + item.cost + " "}
                 total=""
 
               />
