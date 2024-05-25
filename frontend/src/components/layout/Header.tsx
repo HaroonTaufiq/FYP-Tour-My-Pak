@@ -179,7 +179,7 @@ const Header = () => {
         <div className="p-4">
           <h1 className="text-2xl font-semibold ">Admin Dashboard</h1>
         </div>
-        <nav className="mt-5">
+        <nav className="mt-5 ">
           <Link to="/admin" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Dashboard</Link>
           <Link to="/package-list" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Package List</Link>
           <Link to="/hotel-list" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Hotel List</Link>

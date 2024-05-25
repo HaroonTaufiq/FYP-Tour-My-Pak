@@ -5,21 +5,39 @@ import fb from "/public/fb.svg";
 import instagram from "/public/instagram.svg";
 import twitter from "/public/twitter.svg";
 import youtube from "/public/youtube.svg";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 const MyFooter = () => {
+  const location = useLocation();
+  let check1;
+  let check2;
+  useEffect(() =>{
+    if (location.pathname === "/some-specific-route") {
+    check1= localStorage.length==0
+    console.log("check1",check1)
+    }
+  },[check1])
+  useEffect(() =>{
+    if (location.pathname === "/some-specific-route") {
+    check2= (localStorage.length==1 && JSON.parse(localStorage.getItem('user')).email!=='admin@test.com')
+    console.log("check2",check2);
+    }
+  },[check2])
+
   // let admin=localStorage.getItem("user") && JSON.parse(localStorage.getItem('user'))?.email=='admin@test.com'?JSON.parse(localStorage.getItem('user')).email=='admin@test.com':null;
   // console.log("userFooter",admin)
  
   // const admin = JSON.parse(localStorage.getItem('user'));
   // const admin_email=admin.email=="admin@test.com"
   // console.log("admin email",admin_email)
+  console.log("localstorageCheck",localStorage.length)
   return (
    <>
    {/* {JSON.parse(localStorage.getItem('user'))?.email!=='admin@test.com' && */}
    {/* {!admin_email && */}
+   { localStorage.length==0 || (localStorage.length==1 && JSON.parse(localStorage.getItem('user')).email!=='admin@test.com') ?
     <div className="bg-primarycolor w-fit md:w-full   ">
     <div className="mt-[240px] md:mx-[70px] ">
-      <div className=" relative rounded-[20px] bg-secondarycolor  min-w-[350px] -top-[140px] mx-2 md:mx-0   ">
+      <div className=" relative rounded-[20px] bg-secondarycolor  min-w-[350px] -top-[90px] mx-2 md:mx-0   ">
         <div className="ml-4 md:ml-[24px] flex flex-row md:justify-between ">
           <div >
             <p className="relative w-[100px] md:w-[364px]  text-[44px] leading-[54px] font-bold top-5 text-white  ">
@@ -46,7 +64,7 @@ const MyFooter = () => {
   
     </div>
 
-        <div className=" relative grid md:grid-cols-6 grid-cols-3 -top-12 mx-2 md:ml-[70px] ">
+        <div className=" relative grid md:grid-cols-6 grid-cols-3 -top-12 mx-2 md:ml-[70px]  ">
         <div className="flex flex-col space-y-7 md:col-span-2 md:mr-[65px]  ">
           <div className="flex items-center gap-1">
         <div>
@@ -138,7 +156,8 @@ const MyFooter = () => {
 
       
       </div>
-      </div>
+      </div>:""
+}
 
           {/* } */}
       </>

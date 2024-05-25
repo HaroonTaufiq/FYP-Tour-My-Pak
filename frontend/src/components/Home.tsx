@@ -53,6 +53,7 @@ if(result.length > 0){
   
     let parsedResult = resultString?.substring(1, resultString.length - 1).split(',')
      .map(item => item.replace(/'/g, ''));
+     console.log("hello")
      console.log("parsedResult",parsedResult )
      // shuffle array 
      for (let i = parsedResult.length - 1; i > 0; i--) {
@@ -80,6 +81,7 @@ if(result.length > 0){
    
  
     <div className="">
+      
       {/* <Header/> */}
      <div className="">
         <div className=" ">
@@ -97,7 +99,7 @@ if(result.length > 0){
      <FallIntoTravel
       heading={"Recommended Cities to Explore"}
       title={"Unlock Your Wanderlust"}
-      details={"chekout"}
+      details={"Chekout"}
       description1={recommendation[0]}
       description2={recommendation[1]}
       description3={recommendation[2]}
@@ -113,7 +115,7 @@ if(result.length > 0){
       <FallIntoTravel2
       heading={"Top Rated Hotels"}
       title={"Luxury Residences"}
-      details={"Book Hotel"}
+      details={"Chekout"}
       description1={"serena hotel gilgit"}
       description2={"hunza serena inn"}
       description3={"shangrila resort skardu"}
@@ -130,7 +132,7 @@ if(result.length > 0){
       <FallIntoTravel3
       heading={"Top Rated Car Rentals"}
       title={"Drive with Excellence"}
-      details={"chekout"}
+      details={"Chekout"}
       description1={"toyota corolla"}
       description2={"honda civic"}
       description3={"ford mustang"}

@@ -2,38 +2,35 @@
 import React, { useEffect, useState } from "react";
 import "./SearchPage.css";
 import SearchResult from "./SearchResult";
-import skardu from '/skardu.jpg'
-import UpdateDelete from "./UpdateDelete";
+// import skardu from '/skardu.jpg'
+// import UpdateDelete from "./UpdateDelete";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
-import TravelGuideBooking from "./TravelGuideBooking";
 
 function SearchPage() {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  
   const navigate = useNavigate()
-  const [recommended, setRecommended] = useState<boolean>(true)
-  const [highRated, setHighRated] = useState<boolean>(false)
-  const [lowPrice, setLowPrice] = useState<boolean>(false)
+  // const [recommended, setRecommended] = useState<boolean>(true)
+  // const [highRated, setHighRated] = useState<boolean>(false)
+  // const [lowPrice, setLowPrice] = useState<boolean>(false)
 
 
-  const handleClickRecommended = () => {
-    setRecommended(true)
-    setHighRated(false)
-    setLowPrice(false)
-  }
-  const handleClickHighRated = () => {
-    setRecommended(false)
-    setHighRated(true)
-    setLowPrice(false)
-  }
-  const handleClickLowPrice = () => {
-    setRecommended(false)
-    setHighRated(false)
-    setLowPrice(true)
-  }
+  // const handleClickRecommended = () => {
+  //   setRecommended(true)
+  //   setHighRated(false)
+  //   setLowPrice(false)
+  // }
+  // const handleClickHighRated = () => {
+  //   setRecommended(false)
+  //   setHighRated(true)
+  //   setLowPrice(false)
+  // }
+  // const handleClickLowPrice = () => {
+  //   setRecommended(false)
+  //   setHighRated(false)
+  //   setLowPrice(true)
+  // }
 
   ////////////////////////////////////////////////////////////////////////////
 
@@ -42,21 +39,10 @@ function SearchPage() {
   
   const [cssclass,setCssClass]=useState('')
   const [cssclassone,setCssClassOne]=useState('')
-  useEffect(() => {
-
-    if(JSON.parse(localStorage.getItem('user')).email=='admin@test.com' ){
-      setCssClass('md:ml-[251px] md:-mt-[620px] md:overflow-y-scroll md:max-h-screen')
-    
-      setCssClassOne('md:fixed md:z-10 md:!mt-[-85px] md:!w-[1040px]')
-   
-      
-    }
-    getProducts()
-  }, [])
   async function getProducts() {
     await fetch("http://localhost:4000/car-list", {
       headers: {
-        authorization: "bearer " + JSON.parse(localStorage.getItem('token'))
+        authorization: "bearer "
       }
     }).then(async (resp) => {
       await resp.json().then((result) => {
@@ -66,6 +52,18 @@ function SearchPage() {
       })
     })
   }
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    if(JSON.parse(localStorage.getItem('user')).email=='admin@test.com' ){
+      setCssClass('md:ml-[251px] md:-mt-[620px] md:overflow-y-scroll md:max-h-screen')
+    
+      setCssClassOne('md:fixed md:z-10 md:!mt-[-85px] md:!w-[1040px]')
+   
+      
+    }
+    getProducts()
+  }, [])
+
   function search(key) {
     if (key) {
       fetch('http://localhost:4000/searchCar/' + key).then((resp) => resp.json().then((result) => {

@@ -267,7 +267,7 @@ app.put("/package-list-ml/:id", async (req, resp) => {
   if (result) {
     console.log("in ml path", result)
   }
-  else if (!result) {
+  else if (!result) { 
     resp.send({ "result": "No Product with this id" })
   }
   // const inputCity = result.name.charAt(0).toUpperCase() + result.name.slice(1);
@@ -279,11 +279,11 @@ if (inputCity) {
             console.error(err);
             // resp.status(500).send("Internal Server Error");
         } else {
-          console.log('print type of results ',typeof req.body.id)
+          console.log('print type of results ',typeof req.body.userId)
           let recommendationUpdate = await Recommendation.updateOne({ user_id:req.body.userId}, { recommendcities: results })
           console.log("app.put(/package-list/:id", results)
             resp.send(recommendationUpdate);
-            console.log("machine learining results: " ,results)
+            console.log("machine learining results: " ,recommendationUpdate)
         }
     });
 
@@ -293,6 +293,17 @@ if (inputCity) {
 
 });
 
+app.post("/user-ml", async (req, resp) => {
+  let recommendation = new Recommendation(req.body);
+  let result = await recommendation.save();
+
+    if (result) {
+      resp.send(result)
+    } else {
+      resp.send({ result: "something went wrong" })
+    }
+
+});
 
 
 

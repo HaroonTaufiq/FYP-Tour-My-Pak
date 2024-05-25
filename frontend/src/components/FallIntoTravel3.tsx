@@ -42,27 +42,8 @@ console.log("description1",description1)
 state.forEach(place => {
     console.log("placs name",place.name.toLowerCase())
 });
- fetch("http://localhost:4000/car-list", {
-    headers: {
-      authorization: "bearer " + JSON.parse(localStorage.getItem('token'))
-    }
-  }).then(async (resp) => {
-    await resp.json().then((result) => {
-      console.log(result)
-   
-      setCar(result)
-    }) 
-  })
- fetch("http://localhost:4000/hotel-list", {
-    headers: {
-      authorization: "bearer " + JSON.parse(localStorage.getItem('token'))
-    }
-  }).then(async (resp) => {
-    await resp.json().then((result) => {
-      console.log(result)
-      setHotel(result)
-    }) 
-  })
+
+
 
 
 const check1=()=>{

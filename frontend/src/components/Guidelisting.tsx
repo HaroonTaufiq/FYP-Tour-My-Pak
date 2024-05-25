@@ -10,9 +10,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import TravelGuideBooking from "./TravelGuideBooking";
 
 function SearchPage() {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+
   const navigate = useNavigate()
   const [recommended, setRecommended] = useState<boolean>(true)
   const [highRated, setHighRated] = useState<boolean>(false)
@@ -42,6 +40,7 @@ function SearchPage() {
   const [cssclass,setCssClass]=useState('')
   const [cssclassone,setCssClassOne]=useState('')
   useEffect(() => {
+    window.scrollTo(0, 0)
     if(JSON.parse(localStorage.getItem('user')).email=='admin@test.com' ){
       setCssClass('md:ml-[251px] md:-mt-[620px] md:overflow-y-scroll md:max-h-screen')
     

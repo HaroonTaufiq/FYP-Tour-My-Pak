@@ -13,6 +13,8 @@ import { getAuth } from "firebase/auth";
 
 
 const Signup = () => {
+  const [isChecked,SetIsChecked]=useState(false)
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBNnRaNm8LSWJcwseANwYWxXd7UNSXaoFo",
@@ -50,6 +52,7 @@ const app = initializeApp(firebaseConfig);
 
  
   function register() {
+    SetIsChecked(true)
     createUserWithEmailAndPassword(auth,state.email,state.password).then((userCredential)=>{
     fetch("http://localhost:4000/signup", {
       method: "post",
@@ -61,7 +64,7 @@ const app = initializeApp(firebaseConfig);
       resp.json().then((result) => {
         if (result.name) {
           console.log("resulyt",result)
-          if (result.name == "Admin") {
+          if (result.email == "admin@test.com") {
            
               alert("signup success")
               localStorage.setItem('user', JSON.stringify(result))
@@ -73,14 +76,27 @@ const app = initializeApp(firebaseConfig);
            
           }
          
-          if (result.name!="Admin") 
+          if (result.email!="admin@test.com") 
           {
             
             alert("signup success")
             localStorage.setItem('user', JSON.stringify(result))
             navigate('/')
+            
             console.log(userCredential);
-        
+            const newuser = JSON.parse(localStorage.getItem('user'));
+            const newuserId = newuser._id;
+            fetch("http://localhost:4000/user-ml", {
+              method: "post",
+              headers: {
+                'Content-Type': "application/json"
+              },
+              body: JSON.stringify({ user_id: newuserId })
+            }).then((resp) => {
+              resp.json().then((result) => {
+                console.log('new user',result)
+            })
+    })
          }
           
           // alert("signup success")
@@ -111,7 +127,7 @@ const app = initializeApp(firebaseConfig);
             onChange={(event) => setState((prevState: any) => ({ ...prevState, name: event.target.value }))}></input>
           <input  type='text' placeholder='Enter Email' onChange={(event) => setState((prevState: any) => ({ ...prevState, email: event.target.value }))}></input>
           <input  type='password' placeholder='Enter Password' onChange={(event) => setState((prevState: any) => ({ ...prevState, password: event.target.value }))}></input>
-          <button className='primary' onClick={() => register()}>Sign up</button>
+         {!isChecked ?  <button className='primary' onClick={() => register()}>Sign up</button> :  <button className='primary' >Loading...</button>}
           <div className="text-center py-2 text-gray-500">
             Already a member? <Link className="underline text-black" to={'/login'}>Login</Link>
           </div>

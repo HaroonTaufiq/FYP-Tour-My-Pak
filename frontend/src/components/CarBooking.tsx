@@ -7,6 +7,7 @@ import { Context } from "./StateContext";
 import { useParams } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 export default function TourPackageBooking() {
+  const [isChecked,SetIsChecked]=useState(false)
   const [cssclass,setCssClass]=useState('')
   useEffect(() => {
     if(JSON.parse(localStorage.getItem('user')).email=='admin@test.com' ){
@@ -99,6 +100,7 @@ console.log("costo",cost)
 // setPrice(cost)
 const fetchStripe= async ()=>
   {
+    SetIsChecked(true)
         // const userId = JSON.parse(localStorage.getItem('user'))._id;
     fetch("http://localhost:4000/book-car", {
       method: "post",
@@ -236,15 +238,7 @@ const fetchStripe= async ()=>
           </div>
         )}
       </div> */}
-      <button  className="primary mt-4" onClick={()=>fetchStripe()}>
-        Book 
-        {/* {numberOfNights > 0 && (
-          <span>
-             ${numberOfNights * place.price}
-             $40
-          </span>
-        )} */}
-      </button>
+      {!isChecked?<button  className="primary mt-4" onClick={()=>fetchStripe()}>Book </button>:<button  className="primary mt-4" >Loading... </button>}
     </div>
 }
         </div>
