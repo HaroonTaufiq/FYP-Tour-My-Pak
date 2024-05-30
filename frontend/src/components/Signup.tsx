@@ -17,13 +17,13 @@ const Signup = () => {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBNnRaNm8LSWJcwseANwYWxXd7UNSXaoFo",
-  authDomain: "fir-d7c90.firebaseapp.com",
-  projectId: "fir-d7c90",
-  storageBucket: "fir-d7c90.appspot.com",
-  messagingSenderId: "579090468562",
-  appId: "1:579090468562:web:63c369327a7dffd087a70b",
-  measurementId: "G-7LBK1668RT"
+  apiKey: "AIzaSyCFx6XJcD6YbWSTF3LvjlAHc8oVRI5Hyyc",
+  authDomain: "fyp-tour-my-pak.firebaseapp.com",
+  projectId: "fyp-tour-my-pak",
+  storageBucket: "fyp-tour-my-pak.appspot.com",
+  messagingSenderId: "559885669730",
+  appId: "1:559885669730:web:e0586e486acd85dc4a483b",
+  measurementId: "G-DQHNBL3S2P"
 };
 
 // Initialize Firebase

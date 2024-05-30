@@ -1,2 +1,4 @@
-const mongoose=require("mongoose");
-mongoose.connect("mongodb+srv://mahmoodhamza06:Mahmood123456@cluster0.pmgxo8u.mongodb.net/E-commerce");
+require('dotenv').config();
+
+const mongoose = require("mongoose");
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING);
