@@ -2,6 +2,7 @@
 
 This is a MERN stack based tourism web application designed to enhance user experience and provide a robust Tourism Management System (TMS) for the admin side.
 
+Click the image to watch the video
 [![Watch the video](./Front.png)](https://vimeo.com/952125486?share=copy)
 
 ## Features
