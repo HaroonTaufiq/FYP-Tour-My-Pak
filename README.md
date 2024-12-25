@@ -36,4 +36,4 @@ To get a local copy up and running, follow these simple steps:
 
 ## Contact
 
-Your Name - itx.haroon1@gmail.com[itx.haroon1@gmail.com]
+Haroon Taufiq - Email [itx.haroon1@gmail.com]
